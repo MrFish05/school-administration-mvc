@@ -7,7 +7,7 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <title>Student List</title>
+    <title>Register Teacher</title>
 </head>
 
 <body class="bg-secondary-subtle">
@@ -18,8 +18,8 @@
 
             <div class="navbar-nav ms-auto">
                 <a class="nav-link" href="index.php?action=showAllClasses">Classes</a>
-                <a class="nav-link" href="index.php?action=showAllTeachers">Teachers</a>
-                <a class="nav-link active" href="#">Students</a>
+                <a class="nav-link active" href="index.php?action=showAllTeachers">Teachers</a>
+                <a class="nav-link" href="index.php?action=showAllStudents">Students</a>
                 <a class="nav-link" href="index.php?action=showAllRooms">Rooms</a>
             </div>
         </div>
@@ -30,29 +30,25 @@
         <div class="row">
 
             <div class="col-md-3 col-lg-2 mb-4">
-
                 <div class="card shadow">
-
                     <div class="card-header bg-dark text-white text-center">
-                        Students Menu
+                        Teacher Menu
                     </div>
 
                     <div class="list-group list-group-flush">
 
-                        <a href="#
-                            class="list-group-item list-group-item-action active">
+                        <a href="index.php?action=showAllTeachers"
+                            class="list-group-item list-group-item-action">
                             List
                         </a>
 
                         <a href="#"
-                            class="list-group-item list-group-item-action">
+                            class="list-group-item list-group-item-action active">
                             Register
                         </a>
 
                     </div>
-
                 </div>
-
             </div>
 
             <div class="col-md-9 col-lg-10">
@@ -60,36 +56,32 @@
                 <div class="card shadow">
 
                     <div class="card-header bg-secondary text-white text-center">
-                        <h3 class="mb-0">Student List</h3>
+                        <h3 class="mb-0">Register New Teacher</h3>
                     </div>
 
-                    <div class="card-body p-0">
+                    <div class="card-body">
 
-                        <table class="table table-striped table-hover mb-0 text-center">
+                        <form method="POST" action="#">
 
-                            <thead class="table-secondary">
-                                <tr>
-                                    <th>First Name</th>
-                                    <th>Last Name</th>
-                                    <th>Birthday</th>
-                                    <th>Class</th>
-                                </tr>
-                            </thead>
+                            <div class="mb-3">
+                                <label class="form-label">First Name</label>
+                                <input type="text" name="first_name" class="form-control" required>
+                            </div>
 
-                            <tbody class="table-group-divider">
+                            <div class="mb-3">
+                                <label class="form-label">Last Name</label>
+                                <input type="text" name="last_name" class="form-control" required>
+                            </div>
 
-                                <?php foreach ($student_list as $student) { ?>
-                                    <tr>
-                                        <td><?= $student->getFirst_name(); ?></td>
-                                        <td><?= $student->getLast_name(); ?></td>
-                                        <td><?= $student->getBirthday(); ?></td>
-                                        <td><?= $student->getClass(); ?></td>
-                                    </tr>
-                                <?php } ?>
+                            <div class="d-flex justify-content-end">
 
-                            </tbody>
+                                <button type="submit" class="btn btn-success">
+                                    Register Teacher
+                                </button>
 
-                        </table>
+                            </div>
+
+                        </form>
 
                     </div>
 

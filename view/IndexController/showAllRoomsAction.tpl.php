@@ -7,7 +7,7 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <title>Student Class List</title>
+    <title>Room List</title>
 </head>
 
 <body class="bg-secondary-subtle">
@@ -17,47 +17,70 @@
             <a class="navbar-brand">School</a>
 
             <div class="navbar-nav ms-auto">
-                <a class="nav-link active" href="index.php?action=showAllClasses">Classes</a>
+                <a class="nav-link" href="index.php?action=showAllClasses">Classes</a>
                 <a class="nav-link" href="index.php?action=showAllTeachers">Teachers</a>
                 <a class="nav-link" href="index.php?action=showAllStudents">Students</a>
+                <a class="nav-link active" href="#">Rooms</a>
             </div>
         </div>
     </nav>
 
-    <div class="container py-5">
+    <div class="container-fluid py-5">
 
-        <div class="row justify-content-center">
-            <div class="col-lg-8">
+        <div class="row">
+
+            <div class="col-md-3 col-lg-2 mb-4">
+
+                <div class="card shadow">
+
+                    <div class="card-header bg-dark text-white text-center">
+                        Rooms Menu
+                    </div>
+
+                    <div class="list-group list-group-flush">
+
+                        <a href="#"
+                            class="list-group-item list-group-item-action active">
+                            List
+                        </a>
+
+                        <a href="#"
+                            class="list-group-item list-group-item-action">
+                            Register
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-9 col-lg-10">
 
                 <div class="card shadow">
 
                     <div class="card-header bg-secondary text-white text-center">
-                        <h3 class="mb-0">Student Class List</h3>
+                        <h3 class="mb-0">Room List</h3>
                     </div>
 
                     <div class="card-body p-0">
 
                         <table class="table table-striped table-hover mb-0 text-center">
+
                             <thead class="table-secondary">
                                 <tr>
-                                    <th>First Name</th>
-                                    <th>Last Name</th>
-                                    <th>Birthday</th>
-                                    <th>Class</th>
-                                    <th>Action</th>
+                                    <th>Name</th>
                                 </tr>
                             </thead>
 
                             <tbody class="table-group-divider">
-                                <?php foreach ($students_class_list as $student) { ?>
+
+                                <?php foreach ($room_list as $room) { ?>
                                     <tr>
-                                        <td><?= $student->getFirst_name(); ?></td>
-                                        <td><?= $student->getLast_name(); ?></td>
-                                        <td><?= $student->getBirthday(); ?></td>
-                                        <td><?= $student->getClass(); ?></td>
-                                        <td><a class="btn btn-danger btn-sm" href="index.php?action=removeStudent&student_id=<?= $student->getId(); ?>&class_id=<?= $student->getClass_id(); ?>">Remove</a></td>
+                                        <td><?= $room->getName(); ?></td>
                                     </tr>
                                 <?php } ?>
+
                             </tbody>
 
                         </table>
@@ -67,6 +90,7 @@
                 </div>
 
             </div>
+
         </div>
 
     </div>
