@@ -23,12 +23,16 @@
             return $this->last_name;
         }
 
-        public function getBirtday() {
+        public function getBirthday() {
             return $this->birthday;
         }
 
         public function getClass_id() {
             return $this->class_id;
+        }
+
+        public function getClass():Classes {
+            return Classes::fetchFromDatabase($this->class_id);
         }
 
         public function getRegisteret_at() {

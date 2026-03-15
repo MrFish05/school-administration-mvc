@@ -65,6 +65,10 @@
         public function setUpdatet_at($updatet_at) {
             $this->updated_at = $updatet_at;
         }
+
+        public function __toString() {
+            return $this->getName();
+        }
     }
 
 ?>

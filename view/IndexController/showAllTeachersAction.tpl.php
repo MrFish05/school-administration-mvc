@@ -6,7 +6,7 @@
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-<title>Class List</title>
+<title>Teacher List</title>
 </head>
 
 <body class="bg-secondary-subtle">
@@ -16,8 +16,8 @@
     <a class="navbar-brand">School</a>
 
     <div class="navbar-nav ms-auto">
-        <a class="nav-link" href="#">Classes</a>
-        <a class="nav-link" href="index.php?action=showAllTeachers">Teachers</a>
+        <a class="nav-link" href="index.php?action=showAllClasses">Classes</a>
+        <a class="nav-link" href="#">Teachers</a>
         <a class="nav-link" href="index.php?action=showAllStudents">Students</a>
     </div>
 </div>
@@ -31,7 +31,7 @@
             <div class="card shadow">
 
                 <div class="card-header bg-secondary text-white text-center">
-                    <h3 class="mb-0">Class List</h3>
+                    <h3 class="mb-0">Teacher List</h3>
                 </div>
 
                 <div class="card-body p-0">
@@ -39,18 +39,16 @@
                     <table class="table table-striped table-hover mb-0 text-center">
                         <thead class="table-secondary">
                             <tr>
-                                <th>Name</th>
-                                <th>Room</th>
-                                <th>Teacher</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
                             </tr>
                         </thead>
 
                         <tbody class="table-group-divider">
-                        <?php foreach ($class_list as $class) { ?>
+                        <?php foreach ($teacher_list as $teacher) { ?>
                             <tr>
-                                <td><?= $class->getName(); ?></td>
-                                <td><?= $class->getRoom(); ?></td>
-                                <td><?= $class->getTeacher(); ?></td>
+                                <td><?= $teacher->getFirst_name(); ?></td>
+                                <td><?= $teacher->getLast_name(); ?></td>
                             </tr>
                         <?php } ?>
                         </tbody>
