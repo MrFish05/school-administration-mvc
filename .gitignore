@@ -1,0 +1,60 @@
+# PHP specific
+/vendor/
+/node_modules/
+/composer.phar
+
+# IDE specific files
+/.idea/
+/.vscode/
+/*.sublime-project
+/*.sublime-workspace
+
+# OS specific (macOS)
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Log files
+*.log
+
+# Runtime files
+*.pid
+*.seed
+*.gz
+*.bak
+
+# Composer specific
+composer.lock
+
+# Cache and temp files
+/.cache/
+/tmp/
+/build/
+/dist/
+/public/assets/
+
+# PHPUnit specific
+phpunit.xml
+phpunit.xml.dist
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Laravel specific (if using Laravel)
+/storage/
+/bootstrap/cache/
+
+# Symfony specific (if using Symfony)
+/var/
+/vendor/
+
+# WordPress specific (if using WordPress)
+/wp-content/uploads/
+/wp-content/cache/
+/wp-content/upgrade/
+/wp-content/themes/*/node_modules/
+
+# Drupal specific (if using Drupal)
+/sites/*/files/
