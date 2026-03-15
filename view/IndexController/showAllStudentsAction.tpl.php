@@ -39,7 +39,7 @@
 
                     <div class="list-group list-group-flush">
 
-                        <a href="#
+                        <a href="#"
                             class="list-group-item list-group-item-action active">
                             List
                         </a>
