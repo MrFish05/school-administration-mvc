@@ -70,6 +70,16 @@
         public function setUpdatet_at($updatet_at) {
             $this->updated_at = $updatet_at;
         }
+
+        public static function getStudentInSpecificClass($class_id) {
+            $sql = 'SELECT * FROM students WHERE class_id=?';
+
+            $query = DatabaseConnect::getDatabase()->prepare($sql);
+            $query->execute(array($class_id));
+            $query->setFetchMode(PDO::FETCH_CLASS, 'Students');
+            
+            return $query->fetchAll();
+        }
     }
 
 ?>

@@ -6,7 +6,7 @@
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-<title>Class List</title>
+<title>Student Class List</title>
 </head>
 
 <body class="bg-secondary-subtle">
@@ -16,7 +16,7 @@
     <a class="navbar-brand">School</a>
 
     <div class="navbar-nav ms-auto">
-        <a class="nav-link" href="#">Classes</a>
+        <a class="nav-link" href="index.php?action=showAllClasses">Classes</a>
         <a class="nav-link" href="index.php?action=showAllTeachers">Teachers</a>
         <a class="nav-link" href="index.php?action=showAllStudents">Students</a>
     </div>
@@ -31,7 +31,7 @@
             <div class="card shadow">
 
                 <div class="card-header bg-secondary text-white text-center">
-                    <h3 class="mb-0">Class List</h3>
+                    <h3 class="mb-0">Student Class List</h3>
                 </div>
 
                 <div class="card-body p-0">
@@ -39,20 +39,22 @@
                     <table class="table table-striped table-hover mb-0 text-center">
                         <thead class="table-secondary">
                             <tr>
-                                <th>Name</th>
-                                <th>Room</th>
-                                <th>Teacher</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Birthday</th>
+                                <th>Class</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
 
                         <tbody class="table-group-divider">
-                        <?php foreach ($class_list as $class) { ?>
+                        <?php foreach ($students_class_list as $student) { ?>
                             <tr>
-                                <td><?= $class->getName(); ?></td>
-                                <td><?= $class->getRoom(); ?></td>
-                                <td><?= $class->getTeacher(); ?></td>
-                                <td><a href="index.php?action=showStudentsInClass&class_id=<?= $class->getId(); ?>" class="btn btn-primary">Student list</a></td>
+                                <td><?= $student->getFirst_name(); ?></td>
+                                <td><?= $student->getLast_name(); ?></td>
+                                <td><?= $student->getBirthday(); ?></td>
+                                <td><?= $student->getClass(); ?></td>
+                                <td><a href="index.php?action=removeStudent&student_id=<?= $student->getId(); ?>&class_id=<?= $student->getClass_id(); ?>">Remove</a></td>
                             </tr>
                         <?php } ?>
                         </tbody>
