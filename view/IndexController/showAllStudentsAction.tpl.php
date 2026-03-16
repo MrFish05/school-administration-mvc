@@ -44,7 +44,7 @@
                             List
                         </a>
 
-                        <a href="#"
+                        <a href="index.php?action=registerNewStudent"
                             class="list-group-item list-group-item-action">
                             Register
                         </a>

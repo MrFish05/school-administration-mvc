@@ -43,7 +43,7 @@
                             List
                         </a>
 
-                        <a href="#"
+                        <a href="index.php?action=registerNewClass"
                             class="list-group-item list-group-item-action">
                             Register
                         </a>

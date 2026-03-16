@@ -35,11 +35,11 @@
             return Classes::fetchFromDatabase($this->class_id);
         }
 
-        public function getRegisteret_at() {
+        public function getRegistered_at() {
             return $this->registered_at;
         }
 
-        public function getUpdatet_at() {
+        public function getUpdated_at() {
             return $this->updated_at;
         }
 
@@ -55,7 +55,7 @@
             $this->last_name = $last_name;
         }
 
-        public function setBirtday($birthday) {
+        public function setBirthday($birthday) {
             $this->birthday = $birthday;
         }
 
@@ -63,12 +63,12 @@
             $this->class_id = $class_id;
         }
 
-        public function setRegisteret_at($registered_at) {
+        public function setRegistered_at($registered_at) {
             $this->registered_at = $registered_at;
         }
 
-        public function setUpdatet_at($updatet_at) {
-            $this->updated_at = $updatet_at;
+        public function setUpdated_at($updated_at) {
+            $this->updated_at = $updated_at;
         }
 
         public static function getStudentInSpecificClass($class_id) {

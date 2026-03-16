@@ -31,11 +31,42 @@
             if(!empty($_POST)) {
                 $teacher = new Teachers($_POST);
 
-                $teacher->setRegisteret_at(date('Y-m-d H:i:s'));
-                $teacher->setUpdatet_at(date('Y-m-d H:i:s'));
+                $teacher->setRegistered_at(date('Y-m-d H:i:s'));
+                $teacher->setUpdated_at(date('Y-m-d H:i:s'));
 
                 $teacher->save();
                 redirect("index.php?action=showAllTeachers");
+            }
+        }
+
+        public function registerNewClassAction() {
+            $this->addContext("room_list", Rooms::fetchAllFromDatabase());
+            $this->addContext("teacher_list", Teachers::fetchAllFromDatabase());
+
+
+            if(!empty($_POST)) {
+                $class = new Classes($_POST);
+
+                $class->setRegistered_at(date('Y-m-d H:i:s'));
+                $class->setUpdated_at(date('Y-m-d H:i:s'));
+
+                $class->save();
+                redirect("index.php?action=showAllClasses");
+            }
+        }
+
+        public function registerNewStudentAction() {
+            $this->addContext("class_list", Classes::fetchAllFromDatabase());
+
+
+            if(!empty($_POST)) {
+                $student = new Students($_POST);
+
+                $student->setRegistered_at(date('Y-m-d H:i:s'));
+                $student->setUpdated_at(date('Y-m-d H:i:s'));
+
+                $student->save();
+                redirect("index.php?action=showAllStudents");
             }
         }
     }
