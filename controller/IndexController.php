@@ -81,6 +81,10 @@
                 redirect("index.php?action=showAllRooms");
             }
         }
+
+        public function showAllTaughtsAction() {
+            $this->addContext("tought_list", Taughts::fetchAllFromDatabase());
+        }
     }
 
 ?>

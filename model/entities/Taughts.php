@@ -1,6 +1,6 @@
 <?php 
 
-    class Toughts {
+    class Taughts {
         use ActiveRecordable, Deletable, Findable, Persistable;
 
         private int $id = 0;
@@ -17,8 +17,16 @@
             return $this->teacher_id;
         }
 
+        public function getTeacher():Teachers {
+            return Teachers::fetchFromDatabase($this->teacher_id);
+        }
+
         public function getClass_id() {
             return $this->class_id;
+        }
+
+        public function getClass():Classes {
+            return Classes::fetchFromDatabase($this->class_id);
         }
 
         public function getRegistered_at() {

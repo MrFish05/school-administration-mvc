@@ -47,6 +47,11 @@
                             Register
                         </a>
 
+                        <a href="index.php?action=showAllTaughts"
+                            class="list-group-item list-group-item-action">
+                            Taughts
+                        </a>
+
                     </div>
                 </div>
             </div>

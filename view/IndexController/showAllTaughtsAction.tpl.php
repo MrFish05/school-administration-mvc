@@ -37,8 +37,8 @@
 
                     <div class="list-group list-group-flush">
 
-                        <a href="#"
-                            class="list-group-item list-group-item-action active">
+                        <a href="index.php?action=showAllTeachers"
+                            class="list-group-item list-group-item-action">
                             List
                         </a>
 
@@ -47,8 +47,8 @@
                             Register
                         </a>
 
-                        <a href="index.php?action=showAllTaughts"
-                            class="list-group-item list-group-item-action">
+                        <a href="#"
+                            class="list-group-item list-group-item-action active">
                             Taughts
                         </a>
 
@@ -61,7 +61,7 @@
                 <div class="card shadow">
 
                     <div class="card-header bg-secondary text-white text-center">
-                        <h3 class="mb-0">Teacher List</h3>
+                        <h3 class="mb-0">Teaches List</h3>
                     </div>
 
                     <div class="card-body p-0">
@@ -69,16 +69,16 @@
                         <table class="table table-striped table-hover mb-0 text-center">
                             <thead class="table-secondary">
                                 <tr>
-                                    <th>First Name</th>
-                                    <th>Last Name</th>
+                                    <th>Teacher</th>
+                                    <th>Class</th>
                                 </tr>
                             </thead>
 
                             <tbody class="table-group-divider">
-                                <?php foreach ($teacher_list as $teacher) { ?>
+                                <?php foreach ($tought_list as $tought) { ?>
                                     <tr>
-                                        <td><?= $teacher->getFirst_name(); ?></td>
-                                        <td><?= $teacher->getLast_name(); ?></td>
+                                        <td><?= $tought->getTeacher(); ?></td>
+                                        <td><?= $tought->getClass(); ?></td>
                                     </tr>
                                 <?php } ?>
                             </tbody>
