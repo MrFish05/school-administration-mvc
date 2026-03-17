@@ -69,6 +69,18 @@
                 redirect("index.php?action=showAllStudents");
             }
         }
+
+        public function registerNewRoomAction() {
+            if(!empty($_POST)) {
+                $room = new Rooms($_POST);
+
+                $room->setRegistered_at(date('Y-m-d H:i:s'));
+                $room->setUpdated_at(date('Y-m-d H:i:s'));
+
+                $room->save();
+                redirect("index.php?action=showAllRooms");
+            }
+        }
     }
 
 ?>
