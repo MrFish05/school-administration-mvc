@@ -47,7 +47,7 @@
                             Register
                         </a>
 
-                        <a href="#"
+                        <a href="index.php?action=showAllTaughts"
                             class="list-group-item list-group-item-action active">
                             Taughts
                         </a>
@@ -71,14 +71,32 @@
                                 <tr>
                                     <th>Teacher</th>
                                     <th>Class</th>
+                                    <th>Action</th>
                                 </tr>
                             </thead>
 
                             <tbody class="table-group-divider">
-                                <?php foreach ($tought_list as $tought) { ?>
+                                <?php foreach ($taught_list as $taught) { ?>
                                     <tr>
-                                        <td><?= $tought->getTeacher(); ?></td>
-                                        <td><?= $tought->getClass(); ?></td>
+                                        <form method="post" action="index.php?action=showAllTaughts&taught_id=<?= $taught->getId(); ?>">
+                                            <td><?= $taught->getTeacher(); ?></td>
+                                            <td>
+                                                <select name="class_id" class="form-select" required>
+
+                                                    <?php foreach ($class_list as $class) { ?>
+                                                        <option value="<?= $class->getId(); ?>" <?php if ($taught->getClass_id() == $class->getId()) {
+                                                                                                    echo "selected";
+                                                                                                } ?>>
+                                                            <?= $class->getName(); ?>
+                                                        </option>
+                                                    <?php } ?>
+
+                                                </select>
+                                            </td>
+                                            <td>
+                                                <input type="submit" value="Save" class="btn btn-primary" />
+                                            </td>
+                                        </form>
                                     </tr>
                                 <?php } ?>
                             </tbody>

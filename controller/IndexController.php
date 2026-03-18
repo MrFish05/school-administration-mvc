@@ -83,7 +83,16 @@
         }
 
         public function showAllTaughtsAction() {
-            $this->addContext("tought_list", Taughts::fetchAllFromDatabase());
+            $this->addContext("taught_list", Taughts::fetchAllFromDatabase());
+            $this->addContext("class_list", Classes::fetchAllFromDatabase());
+
+            if(!empty($_POST)) {
+                $taught = Taughts::fetchFromDatabase($_GET['taught_id']);
+                $taught->setClass_id($_POST['class_id']);
+                $taught->save();
+                
+                redirect("index.php?action=showAllTaughts");
+            }
         }
     }
 
