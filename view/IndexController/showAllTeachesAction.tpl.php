@@ -47,9 +47,9 @@
                             Register
                         </a>
 
-                        <a href="index.php?action=showAllTaughts"
+                        <a href="index.php?action=showAllTeaches"
                             class="list-group-item list-group-item-action active">
-                            Taughts
+                            Teaches
                         </a>
 
                     </div>
@@ -76,15 +76,15 @@
                             </thead>
 
                             <tbody class="table-group-divider">
-                                <?php foreach ($taught_list as $taught) { ?>
+                                <?php foreach ($teaches_list as $teaches) { ?>
                                     <tr>
-                                        <form method="post" action="index.php?action=showAllTaughts&taught_id=<?= $taught->getId(); ?>">
-                                            <td><?= $taught->getTeacher(); ?></td>
+                                        <form method="post" action="index.php?action=showAllTeaches&teaches_id=<?= $teaches->getId(); ?>">
+                                            <td><?= $teaches->getTeacher(); ?></td>
                                             <td>
                                                 <select name="class_id" class="form-select" required>
 
                                                     <?php foreach ($class_list as $class) { ?>
-                                                        <option value="<?= $class->getId(); ?>" <?php if ($taught->getClass_id() == $class->getId()) {
+                                                        <option value="<?= $class->getId(); ?>" <?php if ($teaches->getClass_id() == $class->getId()) {
                                                                                                     echo "selected";
                                                                                                 } ?>>
                                                             <?= $class->getName(); ?>

@@ -47,9 +47,9 @@
                             Register
                         </a>
 
-                        <a href="index.php?action=showAllTaughts"
+                        <a href="index.php?action=showAllTeaches"
                             class="list-group-item list-group-item-action">
-                            Taughts
+                            Teaches
                         </a>
 
                     </div>

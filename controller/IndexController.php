@@ -82,16 +82,16 @@
             }
         }
 
-        public function showAllTaughtsAction() {
-            $this->addContext("taught_list", Taughts::fetchAllFromDatabase());
+        public function showAllTeachesAction() {
+            $this->addContext("teaches_list", Teaches::fetchAllFromDatabase());
             $this->addContext("class_list", Classes::fetchAllFromDatabase());
 
             if(!empty($_POST)) {
-                $taught = Taughts::fetchFromDatabase($_GET['taught_id']);
-                $taught->setClass_id($_POST['class_id']);
-                $taught->save();
+                $teaches = Teaches::fetchFromDatabase($_GET['teaches_id']);
+                $teaches->setClass_id($_POST['class_id']);
+                $teaches->save();
                 
-                redirect("index.php?action=showAllTaughts");
+                redirect("index.php?action=showAllTeaches");
             }
         }
     }

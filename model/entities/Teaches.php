@@ -1,6 +1,6 @@
 <?php 
 
-    class Taughts {
+    class Teaches {
         use ActiveRecordable, Deletable, Findable, Persistable;
 
         private int $id = 0;
