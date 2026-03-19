@@ -87,6 +87,10 @@
                                                 class="btn btn-primary btn-sm">
                                                 Student List
                                             </a>
+                                            <a href="index.php?action=showTeachersInClass&class_id=<?= $class->getId(); ?>"
+                                                class="btn btn-primary btn-sm">
+                                                Teacher List
+                                            </a>
                                         </td>
                                     </tr>
                                 <?php } ?>

@@ -52,6 +52,10 @@
         public function __toString() {
             return $this->getFirst_name() . ' ' . $this->getLast_name();
         }
+
+        public function isTeacherOfAClass(): bool {
+            return Teaches::verifyIfTeacherIsRegistered($this->getId());
+        }
     }
 
 ?>

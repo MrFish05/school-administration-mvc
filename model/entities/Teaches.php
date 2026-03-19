@@ -56,6 +56,25 @@
         public function setUpdated_at($updated_at) {
             $this->updated_at = $updated_at;
         }
+
+        public static function verifyIfTeacherIsRegistered($teacher_id): bool {
+            $sql = 'SELECT * FROM teaches WHERE teacher_id = ?';
+
+            $query = DatabaseConnect::getDatabase()->prepare($sql);
+            $query->execute([$teacher_id]);
+
+            return $query->rowCount() > 0;
+        }
+
+        public static function getTeacherInSpecificClass($class_id) {
+            $sql = 'SELECT * FROM teaches WHERE class_id=?';
+
+            $query = DatabaseConnect::getDatabase()->prepare($sql);
+            $query->execute(array($class_id));
+            $query->setFetchMode(PDO::FETCH_CLASS, 'Teaches');
+            
+            return $query->fetch();
+        }
     }
 
 ?>

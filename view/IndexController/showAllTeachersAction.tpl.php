@@ -71,6 +71,7 @@
                                 <tr>
                                     <th>First Name</th>
                                     <th>Last Name</th>
+                                    <th>Class</th>
                                 </tr>
                             </thead>
 
@@ -79,6 +80,16 @@
                                     <tr>
                                         <td><?= $teacher->getFirst_name(); ?></td>
                                         <td><?= $teacher->getLast_name(); ?></td>
+                                        <td>
+                                            <?php
+                                                if(!$teacher->isTeacherOfAClass()) {
+                                                    ?><a href="" class="btn btn-primary btn-sm">Add to Class</a><?php
+                                                }
+                                                else {
+                                                    echo "Assigned";
+                                                }
+                                            ?>
+                                        </td>
                                     </tr>
                                 <?php } ?>
                             </tbody>

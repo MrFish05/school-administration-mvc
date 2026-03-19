@@ -94,6 +94,10 @@
                 redirect("index.php?action=showAllTeaches");
             }
         }
+
+        public function showTeachersInClassAction() {
+            $this->addContext("teacher_class_list", Teaches::getTeacherInSpecificClass($_GET['class_id']));
+        }
     }
 
 ?>
